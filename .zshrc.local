@@ -3,7 +3,7 @@ PATH=/usr/local/bin:`yarn global bin`:~/anaconda2/bin:~/.local/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-HOMEBREW_GITHUB_API_TOKEN="699ce5ebc6f61038fb4619e3e5ce29b03de6a38f":$HOMEBREW_GITHUB_API_TOKEN
+HOMEBREW_GITHUB_API_TOKEN="":$HOMEBREW_GITHUB_API_TOKEN
 
 alias ga='git add'
 alias gps='git push'
