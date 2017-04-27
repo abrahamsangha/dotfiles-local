@@ -1,0 +1,35 @@
+" Rails
+Plug 'tpope/vim-rbenv'
+
+" Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+
+" Elm
+Plug 'lambdatoast/elm.vim'
+
+" Editor organization
+Plug 'scrooloose/nerdtree'
+
+" Track the snippets engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+Plug 'isRuslan/vim-es6'
+
+" Clojure
+Plug 'tpope/vim-salve' 
+Plug 'tpope/vim-dispatch' 
+Plug 'tpope/vim-fireplace' 
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+
+" Solidity
+Plug 'tomlion/vim-solidity'
