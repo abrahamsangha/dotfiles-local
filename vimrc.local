@@ -6,32 +6,60 @@ let NERDTreeShowHidden=1
 let NERDTreeMapOpenSplit="s"
 let NERDTreeMapOpenVSplit="v"
 
-" Ultisnips
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_check_on_wq = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-
-
 " Autoremove trailing spaces when saving the buffer
 autocmd FileType c,cpp,clj,elixir,eruby,html,java,javascript,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggle
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
+augroup END
 
 " ag is fast enough that CtrlP doesn't need to cache but let's do it anyway
 let g:ctrlp_use_caching = 1
+
+" ALE
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\   'python': ['black'],
+\   'rust': ['rustfmt'],
+\   'json': ['jq']
+\}
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'javascript': ['eslint'],
+\   'rust': ['rls']
+\}
+let g:ale_fix_on_save = 1
+let g:ale_python_black_options = '-l 120'
+
+set complete+=.,b,u,]
+
+" Fix Lisp indentation
+autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
+
+" tslime
+let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
+
+" Make it obvious where 120 characters is
+set textwidth=120
+set colorcolumn=+1
+
+" CSV
+augroup vimrcEx
+  autocmd!
+
+  autocmd BufRead,BufNewFile *.csv set filetype=csv
+augroup END
+
+" Fold options
+" set foldmethod=syntax
+set maxmempattern=2000000
+set maxmem=2000000
+set maxmemtot=2000000
