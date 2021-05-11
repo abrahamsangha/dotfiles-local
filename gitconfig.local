@@ -3,5 +3,5 @@
   email = abraham.sangha@cognizant.com
 
 # Enforce SSH
-[url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
+# [url "ssh://git@github.com/"]
+#   insteadOf = https://github.com/
