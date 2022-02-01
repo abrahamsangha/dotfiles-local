@@ -1,12 +1,16 @@
-PATH=/usr/local/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/opt/openssl/bin:~/anaconda3/bin:~/.local/bin:~/.cargo/bin:~/.cabal/bin:/Users/sanab02/.ghcup/bin:$PATH
+PATH=/usr/local/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/opt/openssl/bin:~/anaconda3/bin:~/.local/bin:~/.cargo/bin:~/.cabal/bin:/Users/asangha/.ghcup/bin:$PATH
 
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 HOMEBREW_GITHUB_API_TOKEN="":$HOMEBREW_GITHUB_API_TOKEN
 
 # set Java to Java 8
-export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
+# export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
 
 alias ga='git add'
 alias gps='git push'
@@ -50,7 +54,7 @@ alias sage="/Applications/SageMath-7.3.app/Contents/Resources/sage/sage"
 
 bindkey -e
 
-source /Users/sanab02/.ghcup/env
+# source /Users/asangha/.ghcup/env
 
 #Oh-My-Zsh stuff begins
 
@@ -58,7 +62,7 @@ source /Users/sanab02/.ghcup/env
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sanab02/.oh-my-zsh"
+# export ZSH="/Users/asangha/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -156,7 +160,10 @@ ZSH_THEME="avit"
 #Oh-My-Zsh stuff ends
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/sanab02/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sanab02/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/asangha/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asangha/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/sanab02/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sanab02/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/asangha/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asangha/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# $(brew --prefix asdf)/libexec/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
