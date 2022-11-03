@@ -42,3 +42,6 @@ Plug 'vim-scripts/cabal.vim'
 
 " CSV
 Plug 'chrisbra/csv.vim'
+
+" Fzf plugin
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
