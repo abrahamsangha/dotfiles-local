@@ -1,6 +1,6 @@
 [user]
   name = Abraham Sangha
-  email = abraham.sangha@broadcom.com
+  #email =
 
 # Enforce SSH
 # [url "ssh://git@github.com/"]
